@@ -20,6 +20,8 @@ const data = [
 
 const renderCountryCard = ({ item }) => <CountryCard country={item} />
 
+const seperator = () => <View style={styles.seperator} />
+
 const CountryList = (props) => {
   const { containerStyle } = props
   return (
@@ -31,6 +33,7 @@ const CountryList = (props) => {
         renderItem={renderCountryCard}
         horizontal
         keyExtractor={(item) => item.id.toString()}
+        ItemSeparatorComponent={seperator}
       />
     </View>
   )
@@ -43,7 +46,10 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   listContainer: {
-    marginHorizontal: '3%',
+    marginStart: '3%',
+  },
+  seperator: {
+    width: 20,
   },
 })
 

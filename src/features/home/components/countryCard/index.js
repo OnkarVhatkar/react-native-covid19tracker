@@ -1,6 +1,6 @@
 import React from 'react'
 import { View, Text, StyleSheet } from 'react-native'
-import { color } from '../../../../constants'
+import { Color } from '../../../../constants'
 
 const CountryCard = (props) => {
   const { country } = props.country
@@ -13,9 +13,13 @@ const CountryCard = (props) => {
 
 const styles = StyleSheet.create({
   container: {
-    height: 250,
-    width: 50,
-    backgroundColor: color.BLUE,
+    height: 220,
+    width: 165,
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderWidth: StyleSheet.hairlineWidth,
+    borderColor: Color.BLUE,
+    borderRadius: 15,
   },
 })
 

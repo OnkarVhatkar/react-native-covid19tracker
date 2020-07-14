@@ -1,18 +1,33 @@
 import React from 'react'
 import { View, Text, StyleSheet } from 'react-native'
+import { FontSizes, Color } from '../../../../constants'
 
 const ListHeader = () => {
   return (
     <View style={styles.container}>
-      <Text> List by country </Text>
+      <Text style={styles.header}> List by country </Text>
+      <Text style={styles.viewAll}> Show All </Text>
     </View>
   )
 }
 
 const styles = StyleSheet.create({
   container: {
-    height: 50,
-    justifyContent: 'flex-start',
+    padding: 10,
+    flexDirection: 'row',
+  },
+  header: {
+    flex: 4,
+    fontSize: FontSizes.EXTREME_LARGE,
+    fontWeight: 'bold',
+    color: Color.BLUE,
+  },
+  viewAll: {
+    flex: 1,
+    textAlign: 'right',
+    alignSelf: 'center',
+    color: 'blue',
+    fontWeight: '600',
   },
 })
 

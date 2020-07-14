@@ -2,7 +2,7 @@ import React from 'react'
 import { View, StyleSheet } from 'react-native'
 import CountryList from './components/countryList'
 import IntroSection from './components/intro'
-import { color } from '../../constants'
+import { Color } from '../../constants'
 
 const Home = () => {
   return (
@@ -24,11 +24,12 @@ const styles = StyleSheet.create({
     alignSelf: 'stretch',
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: color.RED,
+    backgroundColor: Color.RED,
   },
   listContainer: {
     flex: 1,
     alignSelf: 'stretch',
+    backgroundColor: Color.GREY_BACKDROP,
   },
 })
 
