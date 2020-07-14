@@ -1,0 +1,23 @@
+{
+  "root": true,
+  "extends": ["@react-native-community","plugin:prettier/recommended"],
+  "plugins": ["prettier"],
+  "rules":{
+    "prettier/prettier": [
+      "error",
+      {
+          "singleQuote": true,
+          "trailingComma": "all",
+          "semi":false
+      }
+    ],
+    "semi": 0,
+    "react/react-in-jsx-scope":0
+  },
+  "overrides": [
+    {
+      "files": ["node_modules"],
+      "excludedFiles":["*.js"]
+    }
+  ]
+}
