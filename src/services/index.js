@@ -6,7 +6,6 @@ export const getCovidData = () => {
     .get(API.SERVER_URL)
     .then((res) => res.data)
     .catch((error) => {
-      console.log('err')
-      console.log(JSON.stringify(error))
+      return Promise.reject(error.response)
     })
 }

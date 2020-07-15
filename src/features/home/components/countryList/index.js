@@ -36,13 +36,15 @@ const CountryList = (props) => {
         setCovidData(res)
         setApiErr(null)
       })
-      .catch((err) => setApiErr('Something went wrong'))
+      .catch((err) => {
+        setApiErr('Something went wrong')
+      })
   }, [])
 
   return (
     <View style={containerStyle}>
       <ListHeader />
-      {apiErr ? ErrorComponent : List(covidData)}
+      {apiErr ? ErrorComponent() : List(covidData)}
     </View>
   )
 }
