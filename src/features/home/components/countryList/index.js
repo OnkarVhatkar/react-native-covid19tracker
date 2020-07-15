@@ -1,50 +1,53 @@
-import React from 'react'
-import { View, FlatList, StyleSheet } from 'react-native'
+import React, { useState, useEffect } from 'react'
+import { View, FlatList, StyleSheet, Text } from 'react-native'
 import CountryCard from '../countryCard'
 import ListHeader from '../listHeader'
+import * as API from '../../../../services'
 
-const data = [
-  {
-    id: 1,
-    country: 'India',
-  },
-  {
-    id: 2,
-    country: 'Italy',
-  },
-  {
-    id: 3,
-    country: 'France',
-  },
-]
-
-const renderCountryCard = ({ item }) => <CountryCard country={item} />
+const renderCountryCard = ({ item }) => <CountryCard stats={item} />
 
 const seperator = () => <View style={styles.seperator} />
 
+const List = (covidData) => {
+  return (
+    <FlatList
+      style={styles.listContainer}
+      data={covidData}
+      renderItem={renderCountryCard}
+      horizontal
+      keyExtractor={(item) => item.Country_text}
+      ItemSeparatorComponent={seperator}
+    />
+  )
+}
+
+const ErrorComponent = () => {
+  return <Text> Something went wrong</Text>
+}
+
 const CountryList = (props) => {
+  const [covidData, setCovidData] = useState({})
+  const [apiErr, setApiErr] = useState(null)
   const { containerStyle } = props
+
+  useEffect(() => {
+    API.getCovidData()
+      .then((res) => {
+        setCovidData(res)
+        setApiErr(null)
+      })
+      .catch((err) => setApiErr('Something went wrong'))
+  }, [])
+
   return (
     <View style={containerStyle}>
       <ListHeader />
-      <FlatList
-        style={styles.listContainer}
-        data={data}
-        renderItem={renderCountryCard}
-        horizontal
-        keyExtractor={(item) => item.id.toString()}
-        ItemSeparatorComponent={seperator}
-      />
+      {apiErr ? ErrorComponent : List(covidData)}
     </View>
   )
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
   listContainer: {
     marginStart: '3%',
   },

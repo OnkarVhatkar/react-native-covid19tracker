@@ -3,7 +3,8 @@ export const ScreenNames = {
 }
 
 export const API = {
-  // SERVER_URL: 'http://45.79.126.198/index.php/wp-json/wc/v3',
+  SERVER_URL: 'https://covid-19-tracking.p.rapidapi.com/v1',
+  RAPI_API_KEY: 'YOUR_API_KEY',
   CONTENT_TYPE: 'application/json',
 }
 
