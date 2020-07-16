@@ -9,11 +9,13 @@ export const API = {
 }
 
 export const Color = {
-  BLUE: '#35d0ba',
+  BLUE: '#3c5ce9',
   RED: '#d92027',
   ORANGE: '#ff9234',
   YELLOW: '#ffcd3c',
-  GREY_BACKDROP: '#edf2f4',
+  GREY_BACKDROP: '#ebebf1',
+  TEXT_BLACK: '#3d405b',
+  TEXT_BLACK_LIGHT: '#a7a7a8',
 }
 
 export const FontSizes = {

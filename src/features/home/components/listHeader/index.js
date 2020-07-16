@@ -20,13 +20,13 @@ const styles = StyleSheet.create({
     flex: 4,
     fontSize: FontSizes.EXTREME_LARGE,
     fontWeight: 'bold',
-    color: Color.BLUE,
+    color: Color.TEXT_BLACK,
   },
   viewAll: {
     flex: 1,
     textAlign: 'right',
     alignSelf: 'center',
-    color: 'blue',
+    color: Color.TEXT_BLACK_LIGHT,
     fontWeight: '600',
   },
 })

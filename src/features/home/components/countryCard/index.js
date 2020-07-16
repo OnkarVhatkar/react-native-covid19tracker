@@ -20,18 +20,17 @@ const styles = StyleSheet.create({
     width: 165,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: Color.BLUE,
+    backgroundColor: 'white',
     borderRadius: 15,
   },
   country: {
     textAlign: 'center',
-    color: 'white',
+    color: Color.TEXT_BLACK,
     fontWeight: '600',
-    // fontFamily: 'Roboto',
     letterSpacing: 1,
   },
   newCases: {
-    color: 'white',
+    color: Color.TEXT_BLACK,
     fontWeight: '500',
   },
 })
