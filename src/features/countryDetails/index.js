@@ -2,7 +2,7 @@ import React from 'react'
 import { View, StyleSheet } from 'react-native'
 import CountryName from './components/countryName'
 import { Color } from '../../constants'
-import { useRoute } from '@react-navigation/native';
+import { useRoute } from '@react-navigation/native'
 
 const CountryDetails = () => {
   const route = useRoute()
