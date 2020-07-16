@@ -13,7 +13,7 @@ const CountryDetails = () => {
   return (
     <View style={styles.container}>
       <CountryName containerStyle={styles.nameContainer} name={Country_text} />
-      <StatsContainer containerStyle={styles.statsContainer} />
+      <StatsContainer containerStyle={styles.statsContainer} stats={stats} />
     </View>
   )
 }

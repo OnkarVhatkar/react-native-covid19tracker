@@ -1,10 +1,11 @@
 import React from 'react'
 import { View, Text, StyleSheet } from 'react-native'
 
-const StatsCard = () => {
+const StatsCard = (props) => {
+  const { count } = props
   return (
     <View style={styles.container}>
-      <Text> StatsCard </Text>
+      <Text>{count}</Text>
     </View>
   )
 }
