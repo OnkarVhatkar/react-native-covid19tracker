@@ -13,7 +13,11 @@ const CountryCard = (props) => {
     <TouchableOpacity
       activeOpacity={Custom.ACTIVE_OPACITY}
       style={styles.container}
-      onPress={() => navigation.navigate(ScreenNames.CountryDetails)}
+      onPress={() =>
+        navigation.navigate(ScreenNames.CountryDetails, {
+          stats: stats,
+        })
+      }
     >
       <Text style={styles.country}> {stats.Country_text} </Text>
       <Text style={styles.newCases}> {`(${newCases.length > 0 ? newCases : 'N.A'})`} </Text>
