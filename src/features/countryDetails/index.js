@@ -3,6 +3,7 @@ import { View, StyleSheet } from 'react-native'
 import CountryName from './components/countryName'
 import { Color } from '../../constants'
 import { useRoute } from '@react-navigation/native'
+import StatsContainer from './components/stats'
 
 const CountryDetails = () => {
   const route = useRoute()
@@ -12,7 +13,7 @@ const CountryDetails = () => {
   return (
     <View style={styles.container}>
       <CountryName containerStyle={styles.nameContainer} name={Country_text} />
-      <View style={styles.statsContainer} />
+      <StatsContainer containerStyle={styles.statsContainer} />
     </View>
   )
 }
@@ -32,6 +33,7 @@ const styles = StyleSheet.create({
   },
   statsContainer: {
     flex: 1,
+    alignSelf: 'stretch',
   },
 })
 

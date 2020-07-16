@@ -11,7 +11,9 @@ const StatsCard = () => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    width: 150,
+    height: 150,
+    borderWidth: 1,
     justifyContent: 'center',
     alignItems: 'center',
   },
