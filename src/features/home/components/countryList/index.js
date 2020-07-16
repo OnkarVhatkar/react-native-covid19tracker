@@ -3,6 +3,7 @@ import { View, FlatList, StyleSheet, Text } from 'react-native'
 import CountryCard from '../countryCard'
 import ListHeader from '../listHeader'
 import * as API from '../../../../services'
+import Loader from '../../../../components/loader'
 
 const renderCountryCard = ({ item }) => <CountryCard stats={item} />
 
@@ -28,25 +29,37 @@ const ErrorComponent = () => {
 const CountryList = (props) => {
   const [covidData, setCovidData] = useState({})
   const [apiErr, setApiErr] = useState(null)
+  const [loading, setLoading] = useState(true)
   const { containerStyle } = props
 
   useEffect(() => {
+    setLoading(true)
     API.getCovidData()
       .then((res) => {
         setCovidData(res)
         setApiErr(null)
+        setLoading(false)
       })
-      .catch((err) => {
+      .catch(() => {
         setApiErr('Something went wrong')
+        setLoading(false)
       })
   }, [])
 
-  return (
-    <View style={containerStyle}>
-      <ListHeader />
-      {apiErr ? ErrorComponent() : List(covidData)}
-    </View>
-  )
+  if (!loading) {
+    return (
+      <View style={containerStyle}>
+        <ListHeader />
+        {apiErr ? ErrorComponent() : List(covidData)}
+      </View>
+    )
+  } else {
+    return (
+      <View style={containerStyle}>
+        <Loader size={'small'} />
+      </View>
+    )
+  }
 }
 
 const styles = StyleSheet.create({
