@@ -1,21 +1,29 @@
 import React from 'react'
-import { View, Text, StyleSheet } from 'react-native'
-import { Color } from '../../../../constants'
+import { Text, StyleSheet } from 'react-native'
+import { Color, Custom, ScreenNames } from '../../../../constants'
+import { TouchableOpacity } from 'react-native-gesture-handler'
+import { useNavigation } from '@react-navigation/native';
 
 const CountryCard = (props) => {
   const { stats } = props
   const newCases = stats['New Cases_text']
+  const navigation = useNavigation()
+
   return (
-    <View style={styles.container}>
+    <TouchableOpacity
+      activeOpacity={Custom.ACTIVE_OPACITY}
+      style={styles.container}
+      onPress={() => navigation.navigate(ScreenNames.CountryDetails)}
+    >
       <Text style={styles.country}> {stats.Country_text} </Text>
       <Text style={styles.newCases}> {`(${newCases.length > 0 ? newCases : 'N.A'})`} </Text>
-    </View>
+    </TouchableOpacity>
   )
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    // flex: 1,
     height: 220,
     width: 165,
     justifyContent: 'center',

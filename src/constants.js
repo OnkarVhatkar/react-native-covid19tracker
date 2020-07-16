@@ -1,5 +1,6 @@
 export const ScreenNames = {
   HomeScreen: 'Home',
+  CountryDetails: 'Cases',
 }
 
 export const API = {
@@ -25,4 +26,8 @@ export const FontSizes = {
   MEDIUM: 16,
   LARGE: 18,
   EXTREME_LARGE: 22,
+}
+
+export const Custom = {
+  ACTIVE_OPACITY: 0.8,
 }
