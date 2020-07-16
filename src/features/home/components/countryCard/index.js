@@ -4,12 +4,11 @@ import { Color } from '../../../../constants'
 
 const CountryCard = (props) => {
   const { stats } = props
+  const newCases = stats['New Cases_text']
   return (
     <View style={styles.container}>
       <Text style={styles.country}> {stats.Country_text} </Text>
-      <Text style={styles.newCases}> {`New:${stats['New Cases_text']}`} </Text>
-      {/* <Text style={styles.newdeaths}> {stats['New Deaths_text']} </Text>
-      <Text style={styles.recoveries}> {stats['Total Recovered_text']} </Text> */}
+      <Text style={styles.newCases}> {`(${newCases.length > 0 ? newCases : 'N.A'})`} </Text>
     </View>
   )
 }
@@ -25,13 +24,15 @@ const styles = StyleSheet.create({
     borderRadius: 15,
   },
   country: {
-    // flex: 1,
-    borderWidth: 1,
     textAlign: 'center',
+    color: 'white',
+    fontWeight: '600',
+    // fontFamily: 'Roboto',
+    letterSpacing: 1,
   },
   newCases: {
-    // flex: 1,
-    borderWidth: 1,
+    color: 'white',
+    fontWeight: '500',
   },
 })
 
