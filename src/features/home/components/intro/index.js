@@ -2,7 +2,8 @@ import React from 'react'
 import { View, Text, StyleSheet, Image } from 'react-native'
 import { FontFamily, FontSizes, Color } from '../../../../constants'
 const IntroSection = (props) => {
-  const { containerStyle, worldCount, worldCountChange } = props
+  const { containerStyle, worldCount, worldCountChange, loading } = props
+  let totalCount = loading ? '' : worldCountChange
   return (
     <View style={containerStyle}>
       <View style={styles.appMetaContainer}>
@@ -13,7 +14,7 @@ const IntroSection = (props) => {
           <Text style={styles.world}> Total active cases </Text>
           <Text style={styles.worldCount}> {worldCount} </Text>
           <Text style={styles.worldCountChange}>
-            {worldCountChange.length > 0 ? `(${worldCountChange})` : ''}
+            {totalCount.length > 0 ? `(${totalCount})` : ''}
           </Text>
         </View>
         <View style={styles.imgContainer}>
@@ -46,7 +47,7 @@ const styles = StyleSheet.create({
   },
   precaution: {
     fontFamily: FontFamily.FontFamily_Bold,
-    fontSize: FontSizes.EXTREME_LARGE,
+    fontSize: FontSizes.LARGE,
     letterSpacing: 1,
     textAlign: 'center',
     color: Color.WHITE,
@@ -66,7 +67,7 @@ const styles = StyleSheet.create({
   },
   world: {
     fontFamily: FontFamily.FontFamily_Bold,
-    fontSize: FontSizes.LARGE,
+    fontSize: FontSizes.EXTREME_LARGE,
     letterSpacing: 1,
     color: Color.WHITE,
     textAlign: 'center',

@@ -13,7 +13,6 @@ const seperator = () => <View style={styles.seperator} />
 const List = (covidData) => {
   return (
     <FlatList
-      style={styles.listContainer}
       data={covidData}
       renderItem={renderCountryCard}
       horizontal
@@ -65,9 +64,6 @@ const CountryList = (props) => {
 }
 
 const styles = StyleSheet.create({
-  listContainer: {
-    marginStart: '3%',
-  },
   seperator: {
     width: 20,
   },

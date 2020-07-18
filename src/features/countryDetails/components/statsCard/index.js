@@ -8,7 +8,7 @@ const StatsCard = (props) => {
     <View style={styles.container}>
       <Text style={[styles.caseType, statsColor]}>{cases}</Text>
       <Text style={[styles.statsCount, statsColor]}>{count}</Text>
-      <Text style={[styles.changeCount, statsColor]}>{change ? `(${change})` : null}</Text>
+      <Text style={[styles.changeCount, statsColor]}>{change ? `(${change})` : '(N.A.)'}</Text>
     </View>
   )
 }
