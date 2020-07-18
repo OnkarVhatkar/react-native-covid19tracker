@@ -5,7 +5,8 @@ import ListHeader from '../listHeader'
 import * as API from '../../../../services'
 import Loader from '../../../../components/loader'
 
-const renderCountryCard = ({ item }) => <CountryCard stats={item} />
+const renderCountryCard = ({ item }) =>
+  item.Country_text !== 'World' ? <CountryCard stats={item} /> : null
 
 const seperator = () => <View style={styles.seperator} />
 
@@ -30,7 +31,7 @@ const CountryList = (props) => {
   const [covidData, setCovidData] = useState({})
   const [apiErr, setApiErr] = useState(null)
   const [loading, setLoading] = useState(true)
-  const { containerStyle } = props
+  const { containerStyle, updateWorldCount } = props
 
   useEffect(() => {
     setLoading(true)
@@ -39,12 +40,13 @@ const CountryList = (props) => {
         setCovidData(res)
         setApiErr(null)
         setLoading(false)
+        updateWorldCount(res[0]['Total Cases_text'], res[0]['New Cases_text'])
       })
       .catch(() => {
         setApiErr('Something went wrong')
         setLoading(false)
       })
-  }, [])
+  }, [updateWorldCount])
 
   if (!loading) {
     return (

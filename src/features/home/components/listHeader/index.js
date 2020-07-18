@@ -6,7 +6,7 @@ const ListHeader = () => {
   return (
     <View style={styles.container}>
       <Text style={styles.header}> List by country </Text>
-      <Text style={styles.viewAll}> Show All </Text>
+      {/* <Text style={styles.viewAll}> Show All </Text> */}
     </View>
   )
 }
@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
     flex: 4,
     fontSize: FontSizes.EXTREME_LARGE,
     fontWeight: 'bold',
-    color: Color.TEXT_BLACK,
+    color: Color.BLUE,
   },
   viewAll: {
     flex: 1,

@@ -6,7 +6,7 @@ const Loader = (props) => {
   const { size } = props
   return (
     <View style={styles.container}>
-      <ActivityIndicator size={size} color={Color.RED} />
+      <ActivityIndicator size={size} color={Color.BLUE} />
     </View>
   )
 }

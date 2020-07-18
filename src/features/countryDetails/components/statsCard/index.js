@@ -23,6 +23,13 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     borderRadius: 15,
     paddingTop: 30,
+    shadowOffset: {
+      width: 0,
+      height: 5,
+    },
+    shadowOpacity: 0.36,
+    shadowRadius: 6.68,
+    elevation: 11,
   },
   caseType: {
     fontFamily: FontFamily.FontFamily,
