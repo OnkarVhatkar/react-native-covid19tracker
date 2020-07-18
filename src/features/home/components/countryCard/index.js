@@ -43,15 +43,17 @@ const styles = StyleSheet.create({
     shadowRadius: 1.41,
 
     elevation: 2,
+    borderWidth: StyleSheet.hairlineWidth,
+    borderColor: Color.BLUE,
   },
   country: {
     textAlign: 'center',
-    color: Color.TEXT_BLACK,
+    color: Color.BLUE,
     fontWeight: '600',
     letterSpacing: 1,
   },
   newCases: {
-    color: Color.TEXT_BLACK,
+    color: Color.BLUE,
     fontWeight: '500',
   },
 })
