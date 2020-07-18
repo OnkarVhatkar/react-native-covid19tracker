@@ -11,6 +11,7 @@ const StatsContainer = (props) => {
         <StatsCard
           count={stats['Total Cases_text'].length > 0 ? stats['Total Cases_text'] : 'N.A'}
           cases={'Infected'}
+          change={stats['New Cases_text'].length > 0 ? stats['New Cases_text'] : ''}
           statsColor={styles.confirmedCasesColor}
         />
         <StatsCard
@@ -28,6 +29,7 @@ const StatsContainer = (props) => {
         <StatsCard
           count={stats['Total Deaths_text'].length > 0 ? stats['Total Deaths_text'] : 'N.A'}
           cases={'Deaths'}
+          change={stats['New Deaths_text'].length > 0 ? stats['New Deaths_text'] : ''}
           statsColor={styles.deathCasesColor}
         />
       </View>

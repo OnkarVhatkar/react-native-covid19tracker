@@ -3,11 +3,12 @@ import { View, Text, StyleSheet } from 'react-native'
 import { FontFamily, FontSizes } from '../../../../constants'
 
 const StatsCard = (props) => {
-  const { count, cases, statsColor } = props
+  const { count, cases, statsColor, change } = props
   return (
     <View style={styles.container}>
       <Text style={[styles.caseType, statsColor]}>{cases}</Text>
       <Text style={[styles.statsCount, statsColor]}>{count}</Text>
+      <Text style={[styles.changeCount, statsColor]}>{change ? `(${change})` : null}</Text>
     </View>
   )
 }
@@ -32,6 +33,12 @@ const styles = StyleSheet.create({
     fontFamily: FontFamily.FontFamily_Bold,
     fontSize: FontSizes.LARGE,
     marginTop: 30,
+    letterSpacing: 1,
+  },
+  changeCount: {
+    fontFamily: FontFamily.FontFamily,
+    fontSize: FontSizes.MEDIUM,
+    marginTop: 10,
     letterSpacing: 1,
   },
 })
