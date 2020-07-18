@@ -1,11 +1,13 @@
 import React from 'react'
 import { View, Text, StyleSheet } from 'react-native'
+import { FontFamily, FontSizes } from '../../../../constants'
 
 const StatsCard = (props) => {
-  const { count } = props
+  const { count, cases, statsColor } = props
   return (
     <View style={styles.container}>
-      <Text>{count}</Text>
+      <Text style={[styles.caseType, statsColor]}>{cases}</Text>
+      <Text style={[styles.statsCount, statsColor]}>{count}</Text>
     </View>
   )
 }
@@ -14,9 +16,23 @@ const styles = StyleSheet.create({
   container: {
     width: 150,
     height: 150,
-    borderWidth: 1,
-    justifyContent: 'center',
+    flexDirection: 'column',
+    justifyContent: 'flex-start',
     alignItems: 'center',
+    backgroundColor: 'white',
+    borderRadius: 15,
+    paddingTop: 30,
+  },
+  caseType: {
+    fontFamily: FontFamily.FontFamily,
+    fontSize: FontSizes.SMALL,
+    letterSpacing: 1,
+  },
+  statsCount: {
+    fontFamily: FontFamily.FontFamily_Bold,
+    fontSize: FontSizes.LARGE,
+    marginTop: 30,
+    letterSpacing: 1,
   },
 })
 

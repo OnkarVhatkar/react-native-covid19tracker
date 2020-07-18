@@ -17,6 +17,11 @@ export const Color = {
   GREY_BACKDROP: '#ebebf1',
   TEXT_BLACK: '#3d405b',
   TEXT_BLACK_LIGHT: '#a7a7a8',
+
+  CONFIRMED_CASES: '#fb1543',
+  ACTIVE_CASES: '#007bff',
+  RECOVERED_CASES: '#28a745',
+  DEATH_CASES: '#6c757d',
 }
 
 export const FontSizes = {
@@ -26,6 +31,11 @@ export const FontSizes = {
   MEDIUM: 16,
   LARGE: 18,
   EXTREME_LARGE: 22,
+}
+
+export const FontFamily = {
+  FontFamily: 'Helvetica',
+  FontFamily_Bold: 'Helvetica-Bold',
 }
 
 export const Custom = {
