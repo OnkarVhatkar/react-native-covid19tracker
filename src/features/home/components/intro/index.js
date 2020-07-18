@@ -37,6 +37,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    marginTop: 50,
   },
   imgContainer: {
     flex: 1,
@@ -56,7 +57,7 @@ const styles = StyleSheet.create({
     fontFamily: FontFamily.FontFamily_Bold,
     fontSize: 36,
     color: Color.WHITE,
-    padding: 30,
+    padding: 10,
   },
   worldCount: {
     fontFamily: FontFamily.FontFamily_Bold,
