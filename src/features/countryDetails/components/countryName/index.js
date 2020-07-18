@@ -1,6 +1,6 @@
 import React from 'react'
 import { View, Text, Image, StyleSheet } from 'react-native'
-import { FontSizes, Color } from '../../../../constants'
+import { FontSizes, Color, FontFamily } from '../../../../constants'
 
 const CountryName = (props) => {
   const { containerStyle, name } = props
@@ -17,6 +17,8 @@ const styles = StyleSheet.create({
   country: {
     fontSize: FontSizes.MEDIUM,
     color: Color.TEXT_BLACK,
+    fontFamily: FontFamily.FontFamily_Bold,
+    letterSpacing: 2
   },
   virusIconStart: {
     position: 'absolute',

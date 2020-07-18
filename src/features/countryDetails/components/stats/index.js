@@ -10,7 +10,7 @@ const StatsContainer = (props) => {
       <View style={styles.horizontalContainer}>
         <StatsCard
           count={stats['Total Cases_text'].length > 0 ? stats['Total Cases_text'] : 'N.A'}
-          cases={'Confirmed'}
+          cases={'Infected'}
           statsColor={styles.confirmedCasesColor}
         />
         <StatsCard

@@ -17,6 +17,7 @@ export const Color = {
   GREY_BACKDROP: '#ebebf1',
   TEXT_BLACK: '#3d405b',
   TEXT_BLACK_LIGHT: '#a7a7a8',
+  WHITE: '#ffffff',
 
   CONFIRMED_CASES: '#fb1543',
   ACTIVE_CASES: '#007bff',
@@ -36,8 +37,16 @@ export const FontSizes = {
 export const FontFamily = {
   FontFamily: 'Helvetica',
   FontFamily_Bold: 'Helvetica-Bold',
+  FontFamily_CondensedBlack: 'HelveticaNeue-CondensedBlack',
 }
 
 export const Custom = {
   ACTIVE_OPACITY: 0.8,
 }
+
+export const Precautions = [
+  'STAY home',
+  'KEEP a safe distance',
+  'WASH hands often',
+  'COVER your cough',
+]
