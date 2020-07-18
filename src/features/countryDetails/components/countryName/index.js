@@ -1,24 +1,22 @@
 import React from 'react'
-import { View, Text, Image, StyleSheet } from 'react-native'
+import { View, Text, StyleSheet } from 'react-native'
 import { FontSizes, Color, FontFamily } from '../../../../constants'
 
 const CountryName = (props) => {
   const { containerStyle, name } = props
   return (
     <View style={containerStyle}>
-      <Image style={styles.virusIconStart} source={require('../../../../assets/virus-96.png')} />
       <Text style={styles.country}>{name}</Text>
-      <Image style={styles.virusIconEnd} source={require('../../../../assets/virus-64.png')} />
     </View>
   )
 }
 
 const styles = StyleSheet.create({
   country: {
-    fontSize: FontSizes.MEDIUM,
-    color: Color.TEXT_BLACK,
+    fontSize: FontSizes.LARGE,
     fontFamily: FontFamily.FontFamily_Bold,
-    letterSpacing: 2
+    letterSpacing: 2,
+    color: Color.WHITE,
   },
   virusIconStart: {
     position: 'absolute',
